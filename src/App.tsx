@@ -3,7 +3,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import { Topbar } from "./components/scenes/global/Topbar";
 import SidebarLocal from './components/scenes/global/SidebarLocal'
-import Dashboard from './components/scenes/dashboard'
+import Dashboard from './components/scenes/dashboard/index'
 // import Team from './components/scenes/team'
 // import Invoices from './components/scenes/invoices'
 // import Contacts from './components/scenes/contacts'
