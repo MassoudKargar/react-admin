@@ -137,15 +137,75 @@ export const themeSettings = (mode) => {
                     },
                     neutral: {
                         dark: colors.grey[700],
-                        main:colors.grey[500]
+                        main: colors.grey[500],
+                        light: colors.grey[100]
                     },
-                    backgrund:{
-                        default:colors.primary[500]
+                    backgrund: {
+                        default: colors.primary[500]
                     }
                 } : {
+                    primary: {
+                        main: colors.primary[100],
+                    },
+                    secondary: {
+                        main: colors.greenAccent[500],
+                    },
+                    neutral: {
+                        dark: colors.grey[700],
+                        main: colors.grey[500],
+                        light: colors.grey[100]
+                    },
+                    backgrund: {
+                        default: "#fcfcfc"
+                    }
+                }),
+        },
+        typography: {
+            fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+            fontSize: 12,
+            h1: {
+                fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+                fontSize: 40,
+            },
+            h2: {
+                fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+                fontSize: 37,
+            },
+            h3: {
+                fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+                fontSize: 24,
+            },
+            h4: {
+                fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+                fontSize: 20,
+            },
+            h5: {
+                fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+                fontSize: 16,
+            },
+            h6: {
+                fontFamily: ['Vazirmatn', 'Source Sans Pro', 'sans-serif'].join(','),
+                fontSize: 14,
+            },
+        },
+    };
+};
 
-                }
-            )
-        }
-    }
-}
+export const ColorModeContext = createContext({
+    toggleColorMode: () => { }
+});
+
+export const useMode = () => {
+    const [mode, setMode] = useState('dark');
+
+    const colorMode = useMemo(
+        () => ({
+            toggleColorMode: () =>
+                setMode((prev) => (prev === "light" ? "dark" : "light")),
+        }),
+        []
+    );
+    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
+    return [theme, colorMode];
+};
