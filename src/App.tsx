@@ -1,19 +1,19 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import { Topbar } from "./components/scenes/global/Topbar";
-import SidebarLocal from './components/scenes/global/SidebarLocal'
-import Dashboard from './components/scenes/dashboard/index'
-// import Team from './components/scenes/team'
-// import Invoices from './components/scenes/invoices'
-// import Contacts from './components/scenes/contacts'
-// import Bar from './components/scenes/bar'
-// import Form from './components/scenes/form'
-// import Line from './components/scenes/line'
-// import Pie from './components/scenes/pie'
-// import FAQ from './components/scenes/faq'
-// import Geography from './components/scenes/geography'
-// import Calender from './components/scenes/calender'
+import { Topbar } from "./scenes/global/Topbar";
+import SidebarLocal from './scenes/global/SidebarLocal'
+import Dashboard from './scenes/dashboard/index'
+// import Team from './scenes/team'
+// import Invoices from './scenes/invoices'
+// import Contacts from './scenes/contacts'
+// import Bar from './scenes/bar'
+// import Form from './scenes/form'
+// import Line from './scenes/line'
+// import Pie from './scenes/pie'
+// import FAQ from './scenes/faq'
+// import Geography from './scenes/geography'
+// import Calender from './scenes/calender'
 
 const App = () => {
     const [theme, colorMode] = useMode()
@@ -26,7 +26,8 @@ const App = () => {
                     <main className="content">
                         <Topbar />
                         <Routes>
-                            <Route path="/dashboard" element={<Dashboard />} />
+                            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+                            <Route path="/" element={<Dashboard />} />
                             {/* <Route path="/team" element={<Team />} /> */}
                             {/* <Route path="/invoices" element={<Invoices />} /> */}
                             {/* <Route path="/contacts" element={<Contacts />} /> */}
