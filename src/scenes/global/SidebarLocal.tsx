@@ -3,7 +3,7 @@ import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link, To } from "react-router-dom";
-import { tokens } from "../../theme";
+// import { tokens } from "../../theme";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
 import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined'
@@ -16,8 +16,13 @@ import PieChartOutlinedIcon from '@mui/icons-material/PieChartOutlined'
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
+import { tokens } from "../../theme";
 
 
+/**
+ * this is interface
+ * @param Masoud string
+ */
 interface ItemProps {
   title: string,
   to: To,
@@ -141,7 +146,7 @@ export const SidebarLocal = () => {
             <Item title={"Bar Chart"} to={"/bar"} icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
             < Item title={"Pie Chart"} to={"/pie"} icon={< PieChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
             <Item title={"Line Chart"} to={"/line"} icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-            <Item title={"Geography"} to={"/geography"} icon={<ContactsOutlinedIcon />} selected={selected} setSelected={setSelected} />
+            <Item title={"Geography"} to={"/geography"} icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
           </Box>
         </Menu>
       </ProSidebar>

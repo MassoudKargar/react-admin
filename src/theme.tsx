@@ -122,7 +122,7 @@ export const tokens = (mode: "light" | "dark") => ({
 })
 
 //mui theme settings 
-export const themeSettings = (mode: "light" | "dark") => {
+export const themeSettings = (mode: "light" | "dark"): ThemeOptions => {
     const colors = tokens(mode);
     return {
         palette: {
@@ -140,7 +140,7 @@ export const themeSettings = (mode: "light" | "dark") => {
                         main: colors.grey[500],
                         light: colors.grey[100]
                     },
-                    backgrund: {
+                    background: {
                         default: colors.primary[500]
                     }
                 } : {
@@ -155,7 +155,7 @@ export const themeSettings = (mode: "light" | "dark") => {
                         main: colors.grey[500],
                         light: colors.grey[100]
                     },
-                    backgrund: {
+                    background: {
                         default: "#fcfcfc"
                     }
                 }),

@@ -9,6 +9,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: Vazirmatn, Source Sans Pro, sans-serif;
+  /* background: red !important; */
 }
 
 .app {
